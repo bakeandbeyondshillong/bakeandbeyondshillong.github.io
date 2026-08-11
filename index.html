@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bake and Beyond — Opening Soon</title>
+<meta name="description" content="Bake and Beyond is a baking supply shop opening soon — jars, packaging, tools and ingredients for home bakers and small businesses.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F6F2EC;
+    --ink:#2B2420;
+    --amber:#B5651D;
+    --sage:#7C8B6F;
+    --kraft:#E8DFC8;
+    --kraft-line: rgba(43,36,32,0.14);
+  }
+
+  *{ margin:0; padding:0; box-sizing:border-box; }
+
+  html{ scroll-behavior:smooth; }
+
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter', sans-serif;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:32px 20px;
+    position:relative;
+    overflow-x:hidden;
+  }
+
+  /* subtle paper texture via layered radial dots */
+  body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background-image: radial-gradient(var(--kraft-line) 1px, transparent 1px);
+    background-size: 22px 22px;
+    opacity:0.5;
+    pointer-events:none;
+  }
+
+  .wrap{
+    max-width:920px;
+    width:100%;
+    display:grid;
+    grid-template-columns: minmax(200px, 320px) 1fr;
+    gap:56px;
+    align-items:center;
+    position:relative;
+  }
+
+  @media (max-width: 720px){
+    .wrap{ grid-template-columns: 1fr; gap:32px; justify-items:center; text-align:center; }
+    .jar-col{ order:1; }
+    .copy-col{ order:2; align-items:center !important; }
+    .eyebrow, .divider{ margin-left:auto; margin-right:auto; }
+  }
+
+  .jar-col{
+    display:flex;
+    justify-content:center;
+  }
+
+  svg.jar{
+    width:100%;
+    max-width:280px;
+    height:auto;
+    filter: drop-shadow(0 18px 30px rgba(43,36,32,0.14));
+  }
+
+  .copy-col{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .eyebrow{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--amber);
+    background:var(--kraft);
+    border:1px solid var(--kraft-line);
+    padding:6px 12px;
+    border-radius:3px;
+    margin-bottom:22px;
+    display:inline-block;
+  }
+
+  h1{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:clamp(2.6rem, 6vw, 4.2rem);
+    line-height:0.98;
+    letter-spacing:-0.01em;
+    margin-bottom:18px;
+  }
+
+  h1 em{
+    font-style:italic;
+    font-weight:500;
+    color:var(--amber);
+  }
+
+  .lede{
+    font-size:17px;
+    line-height:1.6;
+    color:rgba(43,36,32,0.78);
+    max-width:44ch;
+    margin-bottom:28px;
+  }
+
+  .divider{
+    width:56px;
+    height:2px;
+    background:var(--sage);
+    border:none;
+    margin-bottom:28px;
+  }
+
+  .tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-bottom:34px;
+  }
+
+  .tag{
+    font-family:'JetBrains Mono', monospace;
+    font-size:11.5px;
+    letter-spacing:0.02em;
+    color:var(--ink);
+    background:transparent;
+    border:1px solid var(--kraft-line);
+    padding:6px 11px;
+    border-radius:20px;
+  }
+
+  .whatsapp-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    border:1.5px solid var(--ink);
+    border-radius:4px;
+    background:var(--ink);
+    color:var(--paper);
+    font-family:'Inter', sans-serif;
+    font-weight:500;
+    font-size:14.5px;
+    padding:14px 24px;
+    cursor:pointer;
+    text-decoration:none;
+    transition: background 0.2s ease, border-color 0.2s ease;
+  }
+
+  .whatsapp-btn:hover{ background:var(--amber); border-color:var(--amber); }
+  .whatsapp-btn:focus-visible{ outline: 2px solid var(--sage); outline-offset:2px; }
+
+  .whatsapp-btn svg{ width:18px; height:18px; flex-shrink:0; }
+
+  .note{
+    margin-top:14px;
+    font-size:12.5px;
+    color:rgba(43,36,32,0.55);
+  }
+
+  footer{
+    position:fixed;
+    bottom:18px;
+    left:0;
+    right:0;
+    text-align:center;
+    font-family:'JetBrains Mono', monospace;
+    font-size:11px;
+    color:rgba(43,36,32,0.4);
+    letter-spacing:0.03em;
+  }
+
+  @media (prefers-reduced-motion: no-preference){
+    .wrap{ animation: rise 0.7s ease both; }
+    @keyframes rise{
+      from{ opacity:0; transform:translateY(14px); }
+      to{ opacity:1; transform:translateY(0); }
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <div class="jar-col">
+    <svg class="jar" viewBox="0 0 240 300" xmlns="http://www.w3.org/2000/svg">
+      <!-- lid -->
+      <rect x="70" y="18" width="100" height="26" rx="4" fill="#2B2420"/>
+      <rect x="70" y="40" width="100" height="8" fill="#1F1A16"/>
+      <!-- checkered lug pattern on cap edge -->
+      <g fill="#F6F2EC" opacity="0.85">
+        <rect x="76" y="22" width="6" height="6"/>
+        <rect x="88" y="22" width="6" height="6"/>
+        <rect x="100" y="22" width="6" height="6"/>
+        <rect x="112" y="22" width="6" height="6"/>
+        <rect x="124" y="22" width="6" height="6"/>
+        <rect x="136" y="22" width="6" height="6"/>
+        <rect x="148" y="22" width="6" height="6"/>
+        <rect x="160" y="22" width="6" height="6"/>
+        <rect x="82" y="30" width="6" height="6"/>
+        <rect x="94" y="30" width="6" height="6"/>
+        <rect x="106" y="30" width="6" height="6"/>
+        <rect x="118" y="30" width="6" height="6"/>
+        <rect x="130" y="30" width="6" height="6"/>
+        <rect x="142" y="30" width="6" height="6"/>
+        <rect x="154" y="30" width="6" height="6"/>
+      </g>
+      <!-- neck -->
+      <path d="M84 48 L84 66 L156 66 L156 48 Z" fill="#E9E4DC" opacity="0.5"/>
+      <!-- jar body -->
+      <path d="M60 66
+               C60 66 52 74 52 92
+               L52 250
+               C52 268 66 280 90 280
+               L150 280
+               C174 280 188 268 188 250
+               L188 92
+               C188 74 180 66 180 66
+               Z"
+            fill="#E9E4DC" fill-opacity="0.55" stroke="#2B2420" stroke-width="2.5"/>
+      <!-- glass shine -->
+      <path d="M70 92 C70 92 66 100 66 112 L66 230" stroke="#FFFFFF" stroke-opacity="0.6" stroke-width="4" fill="none" stroke-linecap="round"/>
+      <!-- label -->
+      <rect x="66" y="150" width="108" height="80" rx="2" fill="#F6F2EC" stroke="#2B2420" stroke-width="1.5"/>
+      <line x1="76" y1="168" x2="164" y2="168" stroke="#2B2420" stroke-opacity="0.5" stroke-width="1"/>
+      <text x="120" y="188" text-anchor="middle" font-family="Fraunces, serif" font-weight="600" font-size="15" fill="#2B2420">Bake and</text>
+      <text x="120" y="206" text-anchor="middle" font-family="Fraunces, serif" font-weight="600" font-size="15" fill="#2B2420">Beyond</text>
+      <line x1="76" y1="215" x2="164" y2="215" stroke="#2B2420" stroke-opacity="0.5" stroke-width="1"/>
+      <text x="120" y="226" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8" letter-spacing="1" fill="#B5651D">OPENING SOON</text>
+    </svg>
+  </div>
+
+  <div class="copy-col">
+    <span class="eyebrow">Opening Soon</span>
+    <h1>Everything you<br>need to <em>bake</em>,<br>stocked and ready.</h1>
+    <p class="lede">Bake and Beyond is a baking supply shop for home bakers and small businesses — jars, packaging, tools, and ingredients, all in one place. We're getting the shelves ready.</p>
+    <hr class="divider">
+    <div class="tags">
+      <span class="tag">Jars &amp; lids</span>
+      <span class="tag">Packaging</span>
+      <span class="tag">Baking tools</span>
+      <span class="tag">Ingredients</span>
+    </div>
+
+    <a class="whatsapp-btn" href="https://wa.me/917003848735?text=Hello%20Bake%20And%20Beyond%2C%20I%20would%20like%20to%20know%20more%20about%20your%20products." target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.934-1.408A9.955 9.955 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.2a8.17 8.17 0 0 1-4.363-1.257l-.313-.187-3.242.926.94-3.184-.204-.326A8.17 8.17 0 0 1 3.8 12c0-4.53 3.67-8.2 8.2-8.2s8.2 3.67 8.2 8.2-3.67 8.2-8.2 8.2z"/></svg>
+      Message us on WhatsApp
+    </a>
+    <p class="note">We'll message you back once we're open.</p>
+  </div>
+</div>
+
+<footer>Bake and Beyond &middot; Imphal, Manipur</footer>
+
+<script>
+  document.getElementById('notify-form').addEventListener('submit', function(e){
+    e.preventDefault();
+    var input = document.getElementById('email-input');
+    var success = document.getElementById('success-msg');
+    if (input.value){
+      success.classList.add('show');
+      input.value = '';
+      input.blur();
+    }
+  });
+</script>
+
+</body>
+</html>
